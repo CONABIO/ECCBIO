@@ -1,8 +1,8 @@
 <?php
 	//include "base.php";
 	//include "baseAcentos.php";
-	include "host.php"
-	include $rootApp."/Panel/baseAcentos.php";
+	include "../Panel/host.php";
+	include "../Panel/base.php";
 	header('Content-Type: text/html; charset=UTF-8');
 	header('Access-Control-Allow-Origin: http://www.wegp.unam.mx',false); 
 	include "../Panel/host2.php";
