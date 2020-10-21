@@ -2031,6 +2031,8 @@
 	<script src="Web/constants.js"></script>
 	<script src="Web/script.js"></script>
 	<script src="Web/conabio.js"></script>
+	<script src="Web/variables.js"></script>
+	<script src="Web/ee_api_js.js"></script>
 	<script src="Web/accordion.js"></script>
 	<script src="Web/funcionesMapa.js"></script>
 	<!--script src="/static/{{ version }}/utils.js"></script-->
@@ -2046,6 +2048,7 @@
 	<!--script src="/static/{{ version }}/ZipFile.complete.js"></script-->
 	<script src="Web/ZipFile.complete.js"></script>
 	<!--script src="/static/{{ version }}/geoxml3.js"></script-->
+
 	<script src="Web/geoxml3.js"></script>
 	<script src="Web/iscroll-5.2.0.min.js"></script>
 	<script src="Web/drawer-3.2.2.min.js"></script>

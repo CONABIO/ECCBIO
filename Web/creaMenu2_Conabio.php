@@ -119,8 +119,8 @@
 					$('#sub').remove();
 				}
 				callbackF();
-				var capas=$('a[id^=capa]');
-				capas.each(function(index){
+				var capass=$('a[id^=capa]');
+				capass.each(function(index){
 					$(this).attr('data-priority',index);
 				});
 			</script>";
