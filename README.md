@@ -22,7 +22,7 @@
 
 - **Panel/app** (Ruta general del Panel de administración)
 
-- **Panel/app/config/dabase.php** (Info de la base de datos usar Panel/app/config/dabase.php.example como base)
+- **Panel/app/config/database.php** (Info de la base de datos usar Panel/app/config/database.php.example como base)
 
 - **Panel/app/views/admin/login.php** (Establecer la ruta absoluta raiz del panel ej: localhost/eccbio/Panel)
 
