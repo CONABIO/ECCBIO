@@ -1,6 +1,6 @@
 <?php
 	include "../Panel/base.php";
-	include "../Panel/host2.php"
+	include "../Panel/host2.php";
 	$base=new Base($DB_server,$DB_user,$DB_name);
 	$idPais = 1;
 	$idMun = $_REQUEST['metadata'];
