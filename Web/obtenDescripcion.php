@@ -1,9 +1,9 @@
 <?php	
 	//include "base.php";
-	include "../Panel/host2.php"
+	include "../Panel/host2.php";
 	include "../Panel/base.php";
-	$baseDatos = $_REQUEST['bd'];
-	$conex=new Base($DB_server,$DB_user,"$baseDatos");	
+	//$baseDatos = $_REQUEST['bd'];
+	$conex=new Base($DB_server,$DB_user,$DB_name);	
 	echo json_encode(descripcion($conex));
 	
 	function descripcion($conex){				
