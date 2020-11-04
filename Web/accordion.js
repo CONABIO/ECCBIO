@@ -77,6 +77,12 @@ function agregaDiv(id){
 	li.appendTo($('#liAccord'+counter));
 	li.show();
 
+	//temporarily FIX for repeated items in ActiveLayers
+	var repeated1 = $("a#capa"+id+".capaActiva")[1];
+	var repeated2 = $("a#capa"+id+".capaActiva")[2];
+	$(repeated1).hide();
+	$(repeated2).hide();
+
 	//revisar unidades!
 	var unidad = li.find('.unidad').html();
 	console.log("esta es la unidad de la capa: ", unidad);
