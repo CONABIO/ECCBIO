@@ -1124,14 +1124,15 @@ function graphicProtConn(posGrafica, anp, flag){
 				var labels = ['Total', 'Protegido', 'Conectado', 'No-protegido'];
 				var parents = ['','Total','Protegido','Total'];
 				var values = [100, 100-unprot, con, unprot];
-				var colores = ['orange','green'];
+				//var colores = ['orange','green'];
+				var colores = ['rgb(255, 204, 115)','rgb(151, 188, 188)'];
 			}
 			else{
 				var labels = ['Total', 'Protegido', 'Conectado', 'No-protegido'];
 				var parents = ['','Total','Protegido','Total'];
 				var values = [100, 100-unprot, con, unprot];
-				var colores = ['green','orange'];
-				
+				//var colores = ['green','orange'];
+				var colores = ['rgb(151, 188, 188)','rgb(255, 204, 115)'];
 			}
 			//console.log("prot<unprot: ", prot<unprot);
 			var data = [{

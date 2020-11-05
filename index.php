@@ -219,7 +219,7 @@
 					</li>
 					<li id="listaEstados" style="background-color: rgba(220, 180, 68, 0.8);">
 						<a href="#expEs" data-toggle="collapse" aria-expanded="false">
-							Explorar por Estado
+							Explorar por estado
 						</a>
 						<ul class="collapse list-unstyled" id="expEs">
 							<li id="estadosLayer">
@@ -300,7 +300,7 @@
 					</li>
 					<li id="listaMunicipios" style="background-color: rgba(220, 180, 68, 0.8);">
 						<a href="#expMun" data-toggle="collapse" aria-expanded="false">
-							Explorar por Municipio
+							Explorar por municipio
 						</a>
 						<ul class="collapse list-unstyled" id="expMun">
 							<li>
@@ -754,14 +754,14 @@
 								</div-->
 								<div class="data-item infoG" style="border-bottom: 1px dashed lightgray;">
 									<div class="menuTabla">
-										<div class="data-subtitle">Tendencia temporal de conectividad de la vegetación en el área protegida  ante el cambio climático</div>
+										<div class="data-subtitle">Tendencia temporal de la conectividad de la vegetación en el área protegida  ante el cambio climático</div>
 									</div>
 									<!--div class="menuTabla" style="display: inherit !important;"-->
 									<div class="menuTabla">
 										<div class="sel">
 											<!--p style="">Distancia (Km)</p-->
 											<select id="distanceT0">
-												<option disabled=""  value="-1">Distancia (Km)</option>
+												<option disabled=""  value="-1">Dispersión (Km)</option>
 												<option value="2">2</option>
 												<option value="10" selected>10</option>
 												<option value="30">30</option>
@@ -2013,7 +2013,8 @@
 								<h3>Programación</h3>
 								Ranyart R. Suárez Ponce de León,
 								Adrián Ghilardi,
-								Roberto Rangel Heras
+								Roberto Rangel Heras,
+								Gerardo Alberto González Bautista
 
 								<h3>Diseño</h3>
 								Fabiola López Saldaña
