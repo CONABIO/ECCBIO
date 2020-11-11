@@ -31,7 +31,7 @@ header('Content-Type: text/html; charset=UTF-8');
 			$claseS=$fila->idSubmenu;
 			$paises.='<li '.$sub.'>
 						<a href="#exp'.$idSub.'" data-toggle="collapse" aria-expanded="false">
-							'.htmlentities($fila->nombre, ENT_QUOTES, "ISO-8859-1").'
+							'.$fila->nombre.'
 						</a>						
 						<ul id="exp'.$idSub.'" class="collapse list-unstyled _'.limpia($claseS).'">                          
 						</ul>
@@ -45,7 +45,7 @@ header('Content-Type: text/html; charset=UTF-8');
 			$claseS=$fila->idSubmenu;
 			$paises.='<li '.$sub.'>
 						<a href="#exp'.$idSub.'" data-toggle="collapse" aria-expanded="false">
-							'.htmlentities($fila->nombre, ENT_QUOTES, "ISO-8859-1").'
+							'.$fila->nombre.'
 						</a>						
 						<ul id="exp'.$idSub.'" class="collapse list-unstyled _'.limpia($claseS).'">                          
 						</ul>

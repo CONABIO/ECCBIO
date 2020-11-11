@@ -35,7 +35,7 @@
 	header('Content-type: application/json; charset=utf-8');
 	echo json_encode($jsondata, JSON_FORCE_OBJECT);
 	function changeName($idSubmenu,$name,$conex){
-		$query = "UPDATE subMenus SET nombre = '$name' WHERE idSubmenu=$idSubmenu";
+		$query =  "UPDATE subMenus SET nombre = '".htmlentities($name)."' WHERE idSubmenu=$idSubmenu";
 		$conex->consulta($query);
 	}
 	function changeDescription($idSubmenu,$description,$conex){
@@ -51,7 +51,7 @@
 		$fila = $result->fetch_object();
 		$max = $fila->prioridad;
 		$query = "INSERT INTO subMenus 
-					VALUES(NULL,'$name','$description',($max+1),$idPadreSub);";
+					VALUES(NULL,'".htmlentities($name)."','$description',($max+1),$idPadreSub,$idPais);";
 		$conex->consulta($query);
 		return $conex->db->insert_id;
 	}
