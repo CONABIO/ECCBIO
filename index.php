@@ -2166,18 +2166,10 @@
 		},1000);
 
 		function revisarAbiertos(hijo, hermanos){
-			//var hijos2 = $('ulSidebar').children();
-			//console.log('hijos: ', hijo);
-			//console.log('hermanos: ', hermanos);
 			for(var i = 0; i < hermanos.length-1; i++){
-				//console.log('hijo: ', hijo);
-				//console.log('hermano: ', hermanos[i]);
-				//console.log('iguales?: ', hijo==hermanos[i]);
 				if(hijo != hermanos[i]){
 					var id = $(hermanos[i]).attr('id');
 					var flag = $('#'+id+'>a').attr('aria-expanded');
-					//console.log('idHermano: ', id);
-					//console.log('abierto??: ', flag);
 
 					if(flag){
 						$('#'+id+'>a').attr('aria-expanded','false');
@@ -2188,9 +2180,6 @@
 				}
 			}
 		}
-
-		
-
 		//Table.php 
 	</script>
 </html>
