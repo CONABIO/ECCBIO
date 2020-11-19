@@ -62,7 +62,7 @@
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script src="Web/menuPlay.js"></script>
 		<script src="Web/estilos.js"></script>
-		<script src="https://maps.google.com/maps/api/js?v=3.34&key=<?php echo($key); ?>&libraries=drawing,places,geometry"></script>
+		<script src="https://maps.google.com/maps/api/js?v=3.34&key=<?php echo($key); ?>&libraries=drawing,places,geometry&callback=loadMap" async defer></script>
 		<!-- <script src="/static/{{ version }}/shortcut.js"></script> -->
 		<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
 		<!-- -------------------- -->
@@ -79,7 +79,7 @@
 		<!--link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"-->
 		<!--script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script-->
 	</head>
-	<body id="wegp_conabio" onload="loadMap();" class="drawer drawer--right">
+	<body id="wegp_conabio" class="drawer drawer--right">
 		<header id="gmHeader"> 		
 			<div class="sitename">
 				<button type="button" id="sidebarCollapse" class="btn2" type="button">
@@ -104,7 +104,7 @@
 		<div id="mensajePrecarga" class="mensajePrecarga" style="display: table;">
 			<div class="">
 				<h1 style="color: white;">Bienvenido <br>Espera mientras carga la plataforma</h1>
-				<br><h3>Esto puede tardar hasta un minuto dependiendo de tu conexión, porque estamos migrando el servicio a los servidores de la CONABIO</h3>
+				<br><h3>Estamos optimizando el sistema para acelerar significativamente la velocidad a la que cargan las capas</h3>
 				<!--h1 style="color: white;">Espera mientras cargar la plataforma</h1-->
 			</div>
 			<div class="fa-3x" style="color: white;"><i class="fas fa-sync fa-spin"></i></div>
@@ -2070,6 +2070,41 @@
 				}
 			});			
 			$('[data-toggle="tooltip"]').tooltip();
+			$("#file").change(function(evt){
+				$("#upload").click();
+			});
+			$('#upload').on('click', function() {
+				if($("#file").val()==""){
+					alert("Select file first");
+					return;
+				}
+				closebox("uploadKML");
+				var file_data = $('#file').prop('files')[0];   
+				var form_data = new FormData();                  
+				form_data.append('file', file_data);
+				$("#file").val("");
+				$.ajax({
+					url: 'http://www.mofuss.unam.mx/Mapps/uploads/uploadKML.php',
+					dataType: 'text',  
+					cache: false,
+					contentType: false,
+					processData: false,
+					data: form_data,                         
+					type: 'post',
+					success: function(response){				
+						eval("response="+response);
+						if(response[0]){
+							geoxml3 = new geoXML3.parser({
+								map: map,
+								createPolygon: addMyPolygon,
+								zoom: true,
+								suppressInfoWindows: true
+							});
+							geoxml3.parse(response[1]);
+						}
+					}
+				});
+			});
 		});
 		$('.drawer').drawer({
 			class: {
@@ -2166,10 +2201,18 @@
 		},1000);
 
 		function revisarAbiertos(hijo, hermanos){
+			//var hijos2 = $('ulSidebar').children();
+			//console.log('hijos: ', hijo);
+			//console.log('hermanos: ', hermanos);
 			for(var i = 0; i < hermanos.length-1; i++){
+				//console.log('hijo: ', hijo);
+				//console.log('hermano: ', hermanos[i]);
+				//console.log('iguales?: ', hijo==hermanos[i]);
 				if(hijo != hermanos[i]){
 					var id = $(hermanos[i]).attr('id');
 					var flag = $('#'+id+'>a').attr('aria-expanded');
+					//console.log('idHermano: ', id);
+					//console.log('abierto??: ', flag);
 
 					if(flag){
 						$('#'+id+'>a').attr('aria-expanded','false');
@@ -2180,6 +2223,9 @@
 				}
 			}
 		}
+
+		
+
 		//Table.php 
 	</script>
 </html>

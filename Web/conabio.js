@@ -52,7 +52,7 @@ var bioTempMaxMunInfo = [[],[]];
 var bioTempMinMunInfo = [[],[]];
 var bioTempMedMunInfo = [[],[]];
 var bioTempPreMunInfo = [[],[]];
-
+var contadorAsync = 0;
 
 
 var chart = null, data = null, dataView = null;
@@ -174,6 +174,13 @@ function toKML(figure, name){
 	document.body.removeChild(element);
 }
 
+function callbackAsync(){
+	contadorAsync++;
+	if(contadorAsync == 9){
+		$('#mensajePrecarga').remove();
+	}
+}
+
 function fillData(variables){
 	//poner indices!
 	getIndexes();
@@ -286,6 +293,7 @@ function fillDataAux(variable,idsANP){
 				}
 			}
 		}
+		callbackAsync();
 	});
 }
 
@@ -320,6 +328,7 @@ function fillDataAuxEstados(variable,idsANP){
 				}
 			}
 		}
+		callbackAsync();
 	});
 }
 
@@ -3630,10 +3639,11 @@ function successC(totalAdded,offset){
 	}else if(totalAdded == totalRowsInt){
 		totalRowsInt = null;		
 		zoomMexico();
-		setTimeout(function(){
+		callbackAsync();
+	/*	setTimeout(function(){
 			console.log("termino de cargar!!! cortina eliminada");
-			$('#mensajePrecarga').remove();
-		}, 22000);
+			//$('#mensajePrecarga').remove();
+		}, 22000);/
 	}
 
 }
