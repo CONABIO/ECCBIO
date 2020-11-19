@@ -62,7 +62,7 @@
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script src="Web/menuPlay.js"></script>
 		<script src="Web/estilos.js"></script>
-		<script src="https://maps.google.com/maps/api/js?v=3.34&key=<?php echo($key); ?>&libraries=drawing,places,geometry"></script>
+		<script async defer src="https://maps.google.com/maps/api/js?v=3.34&key=<?php echo($key); ?>&libraries=drawing,places,geometry&callback=loadMap"></script>
 		<!-- <script src="/static/{{ version }}/shortcut.js"></script> -->
 		<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
 		<!-- -------------------- -->
@@ -104,7 +104,7 @@
 		<div id="mensajePrecarga" class="mensajePrecarga" style="display: table;">
 			<div class="">
 				<h1 style="color: white;">Bienvenido <br>Espera mientras carga la plataforma</h1>
-				<br><h3>Esto puede tardar hasta un minuto dependiendo de tu conexión, porque estamos migrando el servicio a los servidores de la CONABIO</h3>
+				<br><h3>Estamos optimizando el sistema para acelerar significativamente la velocidad a la que cargan las capas</h3>
 				<!--h1 style="color: white;">Espera mientras cargar la plataforma</h1-->
 			</div>
 			<div class="fa-3x" style="color: white;"><i class="fas fa-sync fa-spin"></i></div>
@@ -2074,6 +2074,41 @@
 				}
 			});			
 			$('[data-toggle="tooltip"]').tooltip();
+			$("#file").change(function(evt){
+				$("#upload").click();
+			});
+			$('#upload').on('click', function() {
+				if($("#file").val()==""){
+					alert("Select file first");
+					return;
+				}
+				closebox("uploadKML");
+				var file_data = $('#file').prop('files')[0];   
+				var form_data = new FormData();                  
+				form_data.append('file', file_data);
+				$("#file").val("");
+				$.ajax({
+					url: 'http://www.mofuss.unam.mx/Mapps/uploads/uploadKML.php',
+					dataType: 'text',  
+					cache: false,
+					contentType: false,
+					processData: false,
+					data: form_data,                         
+					type: 'post',
+					success: function(response){				
+						eval("response="+response);
+						if(response[0]){
+							geoxml3 = new geoXML3.parser({
+								map: map,
+								createPolygon: addMyPolygon,
+								zoom: true,
+								suppressInfoWindows: true
+							});
+							geoxml3.parse(response[1]);
+						}
+					}
+				});
+			});
 		});
 		$('.drawer').drawer({
 			class: {

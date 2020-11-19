@@ -1277,9 +1277,6 @@ function initialize() {
 }
 
 function loadMap(){
-	$("#file").change(function(evt){
-		$("#upload").click();
-	});
 	if(home != "conabio"){
 		layerPai = new google.maps.FusionTablesLayer();
 		layerEnt = new google.maps.FusionTablesLayer();
@@ -1401,38 +1398,6 @@ function loadMap(){
 	if(!(!!window.chrome && !!window.chrome.webstore)){
 			$('#banner').after('<div id="Pass"><div><label>Hemos detectado que no usas Chrome, para una mejor experiencia te recomendamos descargarlo. <a href="https://www.google.com/chrome/browser/desktop/index.html">Descargar</a></label><button onClick="hideWP()">OK</button></div></div>');
 	}
-	$('#upload').on('click', function() {
-		if($("#file").val()==""){
-			alert("Select file first");
-			return;
-		}
-		closebox("uploadKML");
-		var file_data = $('#file').prop('files')[0];   
-		var form_data = new FormData();                  
-		form_data.append('file', file_data);
-		$("#file").val("");
-		$.ajax({
-			url: 'http://www.mofuss.unam.mx/Mapps/uploads/uploadKML.php',
-			dataType: 'text',  
-			cache: false,
-			contentType: false,
-			processData: false,
-			data: form_data,                         
-			type: 'post',
-			success: function(response){				
-				eval("response="+response);
-				if(response[0]){
-					geoxml3 = new geoXML3.parser({
-						map: map,
-						createPolygon: addMyPolygon,
-						zoom: true,
-						suppressInfoWindows: true
-					});
-					geoxml3.parse(response[1]);
-				}
-			}
-		});
-	});
 }
 function processCoords(coords){
 	var arrayN = coords.length;
