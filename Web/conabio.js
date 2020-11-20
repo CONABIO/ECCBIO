@@ -176,7 +176,7 @@ function toKML(figure, name){
 
 function callbackAsync(){
 	contadorAsync++;
-	if(contadorAsync == 9){
+	if(contadorAsync == 5){
 		$('#mensajePrecarga').remove();
 	}
 }
@@ -328,7 +328,7 @@ function fillDataAuxEstados(variable,idsANP){
 				}
 			}
 		}
-		callbackAsync();
+		//callbackAsync();
 	});
 }
 
