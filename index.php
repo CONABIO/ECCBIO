@@ -61,6 +61,7 @@
 		<!-- <link rel="stylesheet" href="Web/zz_conabio3_files/table.css"> -->
 		<!-- <script src="Web/js/jquery-3.2.1.min.js"></script> -->
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<script src="Web/funcionesMapa.js"></script>
 		<script src="Web/menuPlay.js"></script>
 		<script src="Web/estilos.js"></script>
@@ -2040,8 +2041,7 @@
 	<!--script src="/static/{{ version }}/utils.js"></script-->
 	<script src="Web/utils.js"></script>
 	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-	<!-- <script src="Web/js/plotly.js"></script> -->
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<!-- <script src="Web/js/plotly.js"></script> -->	
 	<!-- <script src="Web/js/bootstrap.min.js"></script> 
 	<script src="Web/js/bootstrap-submenu.min.js"></script>  -->
 	<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script-->
