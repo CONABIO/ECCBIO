@@ -79,7 +79,7 @@
 		<!--link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"-->
 		<!--script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script-->
 	</head>
-	<body id="wegp_conabio" onload="loadMap();" class="drawer drawer--right">
+	<body id="wegp_conabio" class="drawer drawer--right">
 		<header id="gmHeader"> 		
 			<div class="sitename">
 				<button type="button" id="sidebarCollapse" class="btn2" type="button">
