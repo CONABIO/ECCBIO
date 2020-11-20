@@ -38,7 +38,7 @@
 			var layerMun = null;
 			var layerANP = null;			
 		</script>
-		<script src="Web/funcionesMapa.js"></script>
+		
 		<meta charset="utf-8">
 		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
 		<!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
@@ -61,6 +61,7 @@
 		<!-- <link rel="stylesheet" href="Web/zz_conabio3_files/table.css"> -->
 		<!-- <script src="Web/js/jquery-3.2.1.min.js"></script> -->
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="Web/funcionesMapa.js"></script>
 		<script src="Web/menuPlay.js"></script>
 		<script src="Web/estilos.js"></script>
 		<script async defer src="https://maps.google.com/maps/api/js?v=3.34&key=<?php echo($key); ?>&libraries=drawing,places,geometry&callback=loadMap"></script>
