@@ -38,6 +38,7 @@
 			var layerMun = null;
 			var layerANP = null;			
 		</script>
+		<script src="Web/funcionesMapa.js"></script>
 		<meta charset="utf-8">
 		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
 		<!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
@@ -2034,8 +2035,7 @@
 	<script src="Web/conabio.js"></script>
 	<script src="Web/variables.js"></script>
 	<script src="Web/ee_api_js.js"></script>
-	<script src="Web/accordion.js"></script>
-	<script src="Web/funcionesMapa.js"></script>
+	<script src="Web/accordion.js"></script>	
 	<!--script src="/static/{{ version }}/utils.js"></script-->
 	<script src="Web/utils.js"></script>
 	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
