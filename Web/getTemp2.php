@@ -11,12 +11,13 @@
 	$resultado=$base->consulta($query);
 	$result = [];
 	header('Content-Type: application/json');
+	header('Content-Encoding: gzip');
 	while($fila=$resultado->fetch_assoc()){
 		array_push($result,$fila["climas"]);
 	}
 	if(isset($_GET['callback'])){ // Si es una petición cross-domain  
 		echo $_GET['callback'].'('.json_encode($result).')';
 	}else{ // Si es una normal, respondemos de forma normal  
-		echo json_encode($result);
+		echo gzencode(json_encode($result));
 	}
 ?>
