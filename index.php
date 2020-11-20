@@ -61,11 +61,11 @@
 		<!-- <link rel="stylesheet" href="Web/zz_conabio3_files/table.css"> -->
 		<!-- <script src="Web/js/jquery-3.2.1.min.js"></script> -->
 		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-		<script src="Web/funcionesMapa.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>		
 		<script src="Web/menuPlay.js"></script>
 		<script src="Web/estilos.js"></script>
 		<script async defer src="https://maps.google.com/maps/api/js?v=3.34&key=<?php echo($key); ?>&libraries=drawing,places,geometry&callback=loadMap"></script>
+		<script src="Web/funcionesMapa.js"></script>
 		<!-- <script src="/static/{{ version }}/shortcut.js"></script> -->
 		<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
 		<!-- -------------------- -->
