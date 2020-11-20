@@ -64,7 +64,7 @@
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>		
 		<script src="Web/menuPlay.js"></script>
 		<script src="Web/estilos.js"></script>
-		<script async defer src="https://maps.google.com/maps/api/js?v=3.34&key=<?php echo($key); ?>&libraries=drawing,places,geometry&callback=loadMap"></script>
+		<script async defer src="https://maps.google.com/maps/api/js?v=3.34&key=<?php echo($key); ?>&libraries=drawing,places,geometry"></script>
 		<script src="Web/funcionesMapa.js"></script>
 		<!-- <script src="/static/{{ version }}/shortcut.js"></script> -->
 		<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
@@ -82,7 +82,7 @@
 		<!--link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"-->
 		<!--script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script-->
 	</head>
-	<body id="wegp_conabio" class="drawer drawer--right">
+	<body id="wegp_conabio" onload="loadMap()" class="drawer drawer--right">
 		<header id="gmHeader"> 		
 			<div class="sitename">
 				<button type="button" id="sidebarCollapse" class="btn2" type="button">
