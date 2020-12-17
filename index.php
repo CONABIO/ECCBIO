@@ -95,7 +95,7 @@
 				</button>
 				<h1>Explorador de cambio climático y biodiversidad</h1>				
 				<div class="gmVersion">
-				<a href="http://www.biodiversidad.gob.mx/pais/cambio_climatico.html" target="_blank">
+				<a href="http://www.biodiversidad.gob.mx/pais/cambio-climatico" target="_blank">
 					<!--img src="Web/img/conabioHome.png" style="height:100%"/></a-->
 					<img src="Web/logoConabioNew.png" style="height:100%" title="Página de inicio" /></a>
 					<!-- <object data="Web/img/logo_biodiversidad.svg" type="image/svg+xml">
@@ -1981,10 +1981,10 @@
 						<blockquote>
 							   	<h3>Sobre el ECCBio</h3>
 							   
-							   	El <a href="https://www.biodiversidad.gob.mx/pais/cambio_climatico.html" target="_blank">Explorador de cambio climático y biodiversidad</a> es una herramienta de consulta para analizar los posibles efectos del cambio climático en diversos elementos de la diversidad biológica de México.
+							   	El <a href="https://www.biodiversidad.gob.mx/pais/cambio-climatico" target="_blank">Explorador de cambio climático y biodiversidad</a> es una herramienta de consulta para analizar los posibles efectos del cambio climático en diversos elementos de la diversidad biológica de México.
 									
 								<h3>Forma sugerida de citar: </h3>
-								Conabio, IB-UNAM, Conanp-Semarnat, PNUD, INECC. Explorador de cambio climático y biodiversidad, versión 1.0. Comisión Nacional para el Conocimiento y Uso de la Biodiversidad, México. Disponible en http://www.biodiversidad.gob.mx/pais/explorador_cambio_climatico.html (consultada el “indicar fecha”).
+								Conabio, IB-UNAM, Conanp-Semarnat, PNUD, INECC. Explorador de cambio climático y biodiversidad, versión 1.0. Comisión Nacional para el Conocimiento y Uso de la Biodiversidad, México. Disponible en http://www.biodiversidad.gob.mx/pais/explorador_cambio-climatico (consultada el “indicar fecha”).
 
 								<h3>Agradecimientos</h3>
 								Esta primera versión del <strong>ECCBio</strong> es resultado de la colaboración financiada por el proyecto 00087099 “Fortalecimiento de la efectividad del manejo y la resiliencia de las Áreas Protegidas para proteger la biodiversidad amenazada por el Cambio Climático”, el cual es apoyado por un donativo del Fondo para el Medio Ambiente Mundial (GEF por sus siglas en inglés), ejecutado por la Comisión Nacional de Áreas Naturales Protegidas (CONANP) y con el apoyo del Programa de las Naciones Unidas para el Desarrollo (PNUD) como agencia implementadora”.
