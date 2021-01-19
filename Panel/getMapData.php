@@ -29,25 +29,7 @@
 	$response[14] = "";
 	$response[15] = "";
 	$response[16] = "";
-	$response[17] = "";
-	
-	$query = "SELECT numRows,numCols,textoColumnas,varColumna,plantillaId,columnas   
-		FROM $baseDatos.styleIW 
-		WHERE idCapa=$idCapa";
-	// die($query);
-	$res =$base->consulta($query);
-	if($res){
-		if($res->num_rows>0){
-			$row = $res->fetch_array(MYSQLI_NUM);
-			$response[13] = $row[0];
-			$response[14] = $row[1];
-			$response[15] = $row[2];
-			$response[16] = $row[3];
-			$response[17] = htmlentities($row[4]);
-			$response[4] = $row[5];
-		}
-	}
-	// echo print_r($response);
+	$response[17] = "";	
 	header('Content-Type: application/json');
 	echo json_encode($response);	
 ?>
