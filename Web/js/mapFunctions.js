@@ -1411,7 +1411,7 @@ function loadMap(){
 		form_data.append('file', file_data);
 		$("#file").val("");
 		$.ajax({
-			url: 'http://www.mofuss.unam.mx/Mapps/uploads/uploadKML.php',
+			url: 'https://www.wegp.unam.mx/utilities/uploadKML.php',
 			dataType: 'text',  
 			cache: false,
 			contentType: false,
