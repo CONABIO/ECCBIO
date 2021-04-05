@@ -1438,16 +1438,12 @@ function addMyPolygon(placemark){
 	setTimeout(function(){
 		lastPolygonD = polygon;
 		var coords = processCoords(polygon.getPath().getArray());
-		if(home == "conabio" || home == "conabio2"){
-			temporadaG = 1;
-			variableG = 2;
-			polG = 3;
-			anpG = coords2String(coords);
-			envia(variableG,anpG,polG,temporadaG);
-			$("#showHide").click();
-		}else{
-			getUsoSuelo(coords,0);
-		}
+		temporadaG = 1;
+		variableG = 2;
+		polG = 3;
+		anpG = coords2String(coords);
+		envia(variableG,anpG,polG,temporadaG);
+		$("#showHide").click();
 	},100);
     google.maps.event.addListener(polygon, 'click', function(event) {
         polygon.setMap(null);
