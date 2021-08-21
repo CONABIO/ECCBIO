@@ -431,7 +431,10 @@ function envia(t,anp,p,temporada,forzamiento,modelo,flag){
 	// }
 
 	$("#mensajeInicial").hide();
-	$("#cortina").append("<div id='mensajePol' style='line-height: 0.8;'>Espera un momento por favor.<br><br><b>Calculando datos...</b><br><small style='font-size: 55%;'>Esto puede tardar varios minutos dependiendo del tamaño del area seleccionada (aproximadamente cinco minutos para todo el país), porque el motor algebraico debe calcular las estadísticas para todas las celdas. <br>Estamos trabajando en una versión por muestreos mucho más rápida.</small></div>");
+	if($("#mensajePol").length > 0){
+		$("#mensajePol").remove();
+	}
+	$("#cortina").append("<div id='mensajePol' style='line-height: 0.8;'>Espera un momento por favor.<br><br><b>Calculando datos...</b><br><small style='font-size: 55%;'>Esto puede tardar un par de minutos dependiendo del tamaño del area seleccionada. El motor algebraico toma una muestra de pixeles para áreas grandes.</small></div>");
 	$("#cortina").show();
 
 	
@@ -2406,7 +2409,7 @@ function showCambioClimatico(flag){
 function exportaDatos(i){
 	//console.log('cveANP: ', cveANPMarked);
 	//console.log('cveEnt: ', cveEntMarked);
-	if(cveANPMarked.length == 0 && cveEntMarked == 0 && cveMunMarked == 0){
+	if(cveANPMarked.length == 0 && cveEntMarked == 0 && cveMunMarked == 0 && graficadosTypes.length == 0){
 		alert('No hay ningún área seleccionada');
 		return;
 	}
@@ -2697,6 +2700,27 @@ function exportaDatos(i){
 		})},1000);
 	}
 	else if(type == 5){
+		setTimeout(function(){$.ajax({
+			url: 'https://www.wegp.unam.mx/assets_conabio2/reportesPDF/creaPDF_LatexMun.php',
+			type: 'POST',
+			data: {img: imgs,imgN: imgsN, titulos: t, max: t1, min: t2,
+					type: type, idTitulos: idTitulos, fecha: fecha, 
+					yearsPDF: yearsPDF, caption: captionPDF, caption2: captionPDF2,
+					statics: statics},
+			dataType: 'json',
+			success: function(blob){
+				var link = document.createElement('a');
+				link.target="_blank";
+				link.href = blob;
+				link.download = "reporte.pdf";
+				link.click();
+				$('#cortina').attr('style','display: none;');
+				$("#mensajeInicial").show();
+				$("#alertaReporte").remove();
+			}
+	})},1000);
+	}
+	else if(type == 3){
 		setTimeout(function(){$.ajax({
 			url: 'https://www.wegp.unam.mx/assets_conabio2/reportesPDF/creaPDF_LatexMun.php',
 			type: 'POST',

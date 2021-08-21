@@ -2383,7 +2383,7 @@ function showCambioClimatico(flag){
 function exportaDatos(i){
 	//console.log('cveANP: ', cveANPMarked);
 	//console.log('cveEnt: ', cveEntMarked);
-	if(cveANPMarked.length == 0 && cveEntMarked == 0 && cveMunMarked == 0){
+	if(cveANPMarked.length == 0 && cveEntMarked == 0 && cveMunMarked == 0 && graficadosTypes[0] != 3){
 		alert('No hay ningún área seleccionada');
 		return;
 	}
@@ -2673,6 +2673,27 @@ function exportaDatos(i){
 	else if(type == 5){
 		setTimeout(function(){$.ajax({
 			url: '/admin/Conabio2/reportesPDF/creaPDF_LatexMun.php',
+			type: 'POST',
+			data: {img: imgs,imgN: imgsN, titulos: t, max: t1, min: t2,
+					type: type, idTitulos: idTitulos, fecha: fecha, 
+					yearsPDF: yearsPDF, caption: captionPDF, caption2: captionPDF2,
+					statics: statics},
+			dataType: 'json',
+			success: function(blob){
+				var link = document.createElement('a');
+				link.target="_blank";
+				link.href = blob;
+				link.download = "reporte.pdf";
+				link.click();
+				$('#cortina').attr('style','display: none;');
+				$("#mensajeInicial").show();
+				$("#alertaReporte").remove();
+			}
+	})},1000);
+	}
+	else if(type == 3){
+		setTimeout(function(){$.ajax({
+			url: '/admin/Conabio2/reportesPDF/creaPDF_LatexEnt.php',
 			type: 'POST',
 			data: {img: imgs,imgN: imgsN, titulos: t, max: t1, min: t2,
 					type: type, idTitulos: idTitulos, fecha: fecha, 
