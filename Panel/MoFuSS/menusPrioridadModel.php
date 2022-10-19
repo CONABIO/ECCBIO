@@ -51,7 +51,7 @@
 		$fila = $result->fetch_object();
 		$max = $fila->prioridad;
 		$query = "INSERT INTO subMenus 
-					VALUES(NULL,'".htmlentities($name)."','$description',($max+1),$idPadreSub,$idPais);";
+					VALUES(NULL,'".htmlentities($name)."','$description',($max+1),$idPadreSub);";
 		$conex->consulta($query);
 		return $conex->db->insert_id;
 	}
